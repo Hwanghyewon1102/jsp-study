@@ -8,7 +8,7 @@
 </head>
 <body>
 	<!-- 프로젝트 만들고 실행하기 -->
-	<H1>Hello JSP!!</H1>
+	<h1>Hello JSP!!</h1>
 	Hello! Java Server Pages.
 </body>
 </html>
