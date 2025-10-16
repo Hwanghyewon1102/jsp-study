@@ -2,7 +2,6 @@
 <%@page import="java.time.LocalDateTime"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,15 +21,15 @@
 	
 	<div class="container py-4">
 		<!-- 헤더(메뉴) 영역 -->
-		<%@ include file="Welcome_menu.jsp" %>
+		<%@ include file="menu.jsp" %>
 
 		<!-- 중간 타이틀 영역 -->
-    <div class="p-5 mb-4 bg-body-tertiary rounded-3">
-      <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold"><%= greeting %></h1>
-        <p class="col-md-8 fs-4">BookMarket</p>
-      </div>
-    </div>
+		
+		 <jsp:include page="Books_title.jsp" >
+    	<jsp:param value="<%= greeting %>" name="title"/>
+    	<jsp:param value="BookMarket" name="b_list"/>
+    </jsp:include>
+
 
 		<!-- 본문 영역 -->
     <div class="row align-items-md-stretch text-center">
@@ -39,22 +38,22 @@
           <h3><%= tagline %></h3>
           
           <!-- 현재 접속 시간 출력하기 -->
-          <!-- hh:mm:ss a
+          <!-- hh:mm:ss a 
           	hh -> 12시간제(01~12), a -> 오전/오후(AM/PM)
-           -->
-           
-           <% LocalDateTime now = LocalDateTime.now(); 
-           		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
-           		
-           		String CT = now.format(formatter);
-           		out.println("현재 접속 시각: " + CT + "\n");
-           %>
+          -->
+          <%
+          	LocalDateTime now = LocalDateTime.now();
+          	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("hh:mm:ss a");
+          	
+          	String CT = now.format(formatter);
+          	out.println("현재 접속 시각: " + CT + "\n");
+          %>
         </div>
       </div>
  		</div>
 
 		<!-- 푸터(바닥글) 영역 -->
-    <%@ include file="Welcome_footer.jsp" %>
+    <%@ include file="footer.jsp" %>
   </div>
 </body>
 </html>

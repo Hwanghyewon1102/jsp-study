@@ -3,7 +3,6 @@
     pageEncoding="UTF-8"%>
 <!-- exception 내장 객체를 사용하기 위해 오류 페이지로 설정 -->
 <%@ page isErrorPage="true" %>
-<!-- 이동할 특정 오류 페이지 설정 -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +13,7 @@
 	<!-- 오류 페이지 작성하기 -->
 	<h4>errorPage 입니다.</h4>
 	에러가 발생했습니다.
+	
 	<h5>exception 내장 객체 변수</h5>
 	<%
 		exception.printStackTrace(new PrintWriter(out));
