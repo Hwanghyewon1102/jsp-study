@@ -142,7 +142,18 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="JSPBook" path="/JSPBook" reloadable="true" source="org.eclipse.jst.jee.server:JSPBook"/><Context docBase="BookMarket" path="/BookMarket" reloadable="true" source="org.eclipse.jst.jee.server:BookMarket"/><Context docBase="Excercise1" path="/Excercise1" reloadable="true" source="org.eclipse.jst.jee.server:Excercise1"/></Host>
+      <Context docBase="JSPBook" path="/JSPBook" reloadable="true" source="org.eclipse.jst.jee.server:JSPBook"/>
+      <Context docBase="BookMarket" path="/BookMarket" reloadable="true" source="org.eclipse.jst.jee.server:BookMarket">
+      <Resources>
+            <PreResources className="org.apache.catalina.webresources.DirResourceSet"
+                         base="D:/upload"
+                         webAppMount="/images" />
+         </Resources>
+         <!-- base -> 실제 파일이 있는 외부 폴더(주의: 실제 폴더가 존재해야 서버 실행 시 에러 안남)
+              webAppMount -> 웹에서 접근할 경로 /images
+              이렇게 하면 JSP에서 /images/파일명으로 바로 접근 가능 -->
+      </Context>
+      <Context docBase="Excercise" path="/Excercise" reloadable="true" source="org.eclipse.jst.jee.server:Excercise"/></Host>
     </Engine>
   </Service>
 </Server>

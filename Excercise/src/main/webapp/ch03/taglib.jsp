@@ -8,6 +8,16 @@
 <title>Directives Tag</title>
 </head>
 <body>
+	<c:forEach var="k" begin="0" end="10" step="2">
+		<c:out value="${k}" />
+	</c:forEach>
 	
+	<br>
+	
+	<c:forEach var="i" begin="0" end="10">
+		<c:if test="${i % 2 == 0}">
+			${i}
+		</c:if>
+	</c:forEach>
 </body>
 </html>

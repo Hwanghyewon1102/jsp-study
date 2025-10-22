@@ -24,12 +24,10 @@
 		<%@ include file="menu.jsp" %>
 
 		<!-- 중간 타이틀 영역 -->
-		
-		 <jsp:include page="Books_title.jsp" >
+    <jsp:include page="title.jsp">
     	<jsp:param value="<%= greeting %>" name="title"/>
-    	<jsp:param value="BookMarket" name="b_list"/>
+    	<jsp:param value="BookMarket" name="sub"/>
     </jsp:include>
-
 
 		<!-- 본문 영역 -->
     <div class="row align-items-md-stretch text-center">
