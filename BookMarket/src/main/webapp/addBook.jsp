@@ -8,6 +8,9 @@
 	
 	<!-- 부트스트랩 연결 -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- 유효성 검사 js 연결 -->
+	<script type="text/javascript" src="./resources/js/validation.js"></script>
 </head>
 <body>
 	<div class="container py-4">
@@ -42,38 +45,38 @@
 				<div class="mb-3 row">
 					<label class="col-sm-2">저자</label>
 					<div class="col-sm-3">
-						<input type="text" id="author" name="author" class="form-control">
+						<input type="text" name="author" class="form-control">
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label class="col-sm-2">출판사</label>
 					<div class="col-sm-3">
-						<input type="text" id="publisher" name="publisher" class="form-control">
+						<input type="text" name="publisher" class="form-control">
 					</div>
 				</div>
 				<div class="mb-3 row">
 					<label class="col-sm-2">출판일</label>
 					<div class="col-sm-3">
-						<input type="text" id="releaseDate" name="releaseDate" class="form-control">
+						<input type="text" name="releaseDate" class="form-control">
 					</div>
 				</div>
 		
 				<div class="mb-3 row">
 					<label class="col-sm-2">상세정보</label>
 					<div class="col-sm-5">
-						<textarea name="description" id="description" cols="50" rows="2" class="form-control" placeholder="100자 이상 적어주세요"></textarea>
+						<textarea id="description" name="description" cols="50" rows="2" class="form-control" placeholder="100자 이상 적어주세요"></textarea>
 					</div>
 				</div>			
 				<div class="mb-3 row">
 					<label class="col-sm-2">분류</label>
 					<div class="col-sm-3">
-						<input type="text" name="category" id= "category" class="form-control">
+						<input type="text" name="category" class="form-control">
 					</div>
 				</div>
 					<div class="mb-3 row">
 					<label class="col-sm-2">재고수</label>
 					<div class="col-sm-3">
-						<input type="text" name="unitsInStock" id="unitsInStock" class="form-control">
+						<input type="text" id="unitsInStock" name="unitsInStock" class="form-control">
 					</div>
 				</div>
 				<div class="mb-3 row">
@@ -83,15 +86,15 @@
 						<input type="radio" name="condition" value="Old"> 중고도서 
 						<input type="radio" name="condition" value="EBook"> E-Book
 					</div>				
-				</div>		
+				</div>
 				
 				<div class="mb-3 row">
 					<label class="col-sm-2">이미지</label>
 					<div class="col-sm-5">
-						<input type="file" name="bookImage" class="form-control" >
+						<input type="file" name="bookImage" class="form-control">
 					</div>				
-				</div>		
-				
+				</div>
+					
 				<div class="mb-3 row">
 					<div class="col-sm-offset-2 col-sm-10">
 						<button type="submit" class="btn btn-primary" onclick="checkAddBook(event)">등록</button>
@@ -101,7 +104,6 @@
     	
     </div>
     
-    <script src="js/validation.js"></script>
     <%@ include file="footer.jsp" %>
 	</div>
 </body>

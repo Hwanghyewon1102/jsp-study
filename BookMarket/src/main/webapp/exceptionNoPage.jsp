@@ -23,8 +23,8 @@
     <div class="row align-items-md-stretch">
       <div class="col-md-12">
         <div class="h-100 p-5">
-        	<p><%= request.getRequestURL() %></p>
-        	<p><a href="Books.jsp" class="btn btn-secondary">도서 목록 &raquo;</a></p>
+       		<p><%= request.getRequestURL() %></p>
+        	<p><a href="books.jsp" class="btn btn-secondary">도서 목록 &raquo;</a></p>
         </div>
       </div>
     </div>
